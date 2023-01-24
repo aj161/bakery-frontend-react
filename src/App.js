@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import OurProducts from "./components/OurProducts";
+import Basket from "./components/Basket";
+//import About from "./components/About";
+import Footer from "./components/Footer";
+//import Profile from "./components/login/Profile";
+//import Login from "./components/login/Login";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const { isAuthenticated } = useAuth0();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <OurProducts />
+        <Routes>
+          {/* <Route exact path="/" element={ isAuthenticated ? <MyProducts/> : <Login/>}/> */}
+          <Route exact path="/products" element={<OurProducts/>}/>
+          <Route exact path="/basket" element={<Basket/>}/>
+        </Routes>
+        <Footer /> 
+      </BrowserRouter>
+    </>
   );
 }
 
 export default App;
+
