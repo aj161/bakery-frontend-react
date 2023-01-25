@@ -15,7 +15,6 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <OurProducts />
         <Routes>
           {/* <Route exact path="/" element={ isAuthenticated ? <MyProducts/> : <Login/>}/> */}
           <Route exact path="/products" element={<OurProducts/>}/>
