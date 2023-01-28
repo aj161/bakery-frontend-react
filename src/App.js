@@ -6,8 +6,12 @@ import Basket from "./components/Basket";
 //import About from "./components/About";
 import Footer from "./components/Footer";
 //import Profile from "./components/login/Profile";
-//import Login from "./components/login/Login";
+import Login from "./components/login/Login";
 import { useAuth0 } from "@auth0/auth0-react";
+import Home from "./components/Home";
+import RecipeOfTheDay from "./components/RecipeOfTheDay";
+import About from "./components/About";
+
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -16,10 +20,14 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route exact path="/" element={ isAuthenticated ? <MyProducts/> : <Login/>}/> */}
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/basket" element={ isAuthenticated ? <Basket/> : <Login/>}/>
           <Route exact path="/products" element={<OurProducts/>}/>
-          <Route exact path="/basket" element={<Basket/>}/>
-        </Routes>
+          <Route exact path="/recipes" element={<RecipeOfTheDay/>}/>
+          <Route exact path="/about" element={<About/>}/>
+
+          
+          </Routes>
         <Footer /> 
       </BrowserRouter>
     </>
