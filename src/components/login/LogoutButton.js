@@ -12,7 +12,7 @@ const LogoutButton = () => {
   return (
     isAuthenticated && (
     //<button onClick={() => logout({ returnTo: window.location.origin })}> Log Out</button>
-    <MDBBtn style={{borderRadius:"10px", backgroundColor:"#a3cbc1", color:"grey"}} onClick={() => logout({ returnTo: window.location.origin })} outline color="secondary" size="sm" type='button'>
+    <MDBBtn style={{borderRadius:"10px", backgroundColor:"#a3cbc1", color:"grey"}} onClick={() => logout({ returnTo: window.location.origin })} outline color="secondary" size="medium" type='button'>
     Logout
     </MDBBtn>
     )
