@@ -19,7 +19,7 @@ function RecipeOfTheDay() {
     // console.log(process.env.REACT_APP_SERVER);
     const getRecipe = async () => {
       let apiUrl = "https://api.api-ninjas.com/v1/recipe?query=cheesecake";
-      let apiKey = "bonm01MAQBGIFUCm7QrlSqQeg70ipAh3As27qxTB";
+      let apiKey = process.env.REACT_APP_API_KEY;
       let resultAPI = await axios.get(apiUrl, { headers: {"X-Api-Key": apiKey} });
       let quote = resultAPI.data[0];
       console.log('inside useEffect AllDataAPI',quote);
