@@ -83,6 +83,7 @@ function OurProducts(){
             flexFlow: "row",
             flexWrap: "wrap",
             padding: "4rem",
+            justifyContent: "center"
           }}
         >
           {showItems &&
@@ -96,7 +97,7 @@ function OurProducts(){
               setAdmin={setAdmin}
             />
             ))}
-            {!showItems && <p>No products to show</p>}
+            {!showItems && <p>Loading products...</p>}
   
             <UpdateProductModal
             show={updateModalStatus}
